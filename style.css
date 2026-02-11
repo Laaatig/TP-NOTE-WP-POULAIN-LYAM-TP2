@@ -1,0 +1,140 @@
+/*
+Theme Name: tp-outdoor-poulain-lyam
+*/
+
+/* --- 1. RESET ET BASE --- */
+:root {
+    --primary: #2d4a3e; /* Vert forêt */
+    --accent: #d35400;  /* Orange terre */
+    --bg: #fdfdfb;
+    --text: #2c3e50;
+    --white: #ffffff;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+h1 {
+    text-align: center;
+    color: var(--primary);
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+}
+
+/* --- 2. LA GRILLE (Exercice 4) --- */
+.randonnee-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 40px; 
+}
+
+@media (max-width: 900px) {
+    .randonnee-grid { grid-template-columns: 1fr !important; }
+}
+
+/* --- 3. LA CARTE --- */
+.randonnee-card {
+    background: var(--white);
+    border-radius: 18px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.randonnee-card:hover {
+    transform: translateY(-10px);
+}
+
+.randonnee-card img {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: cover !important;
+}
+
+/* --- 4. CONTENU ET TITRES (CORRIGÉ) --- */
+.card-content {
+    padding: 35px !important; /* Aère le texte des bords */
+    box-sizing: border-box !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.randonnee-card h2 {
+    margin: 0 0 15px 0 !important;
+    font-size: 1.4rem;
+}
+
+/* Titres en Vert (Force la couleur même si visité) */
+.randonnee-card h2 a {
+    color: var(--primary) !important; 
+    text-decoration: none !important;
+}
+
+.randonnee-card h2 a:hover {
+    color: var(--accent) !important;
+}
+
+.randonnee-card p {
+    margin: 5px 0 !important;
+    font-size: 0.95rem;
+    color: #666;
+}
+
+/* --- 5. LE BOUTON MOYEN (CENTRAGE PARFAIT) --- */
+.randonnee-card a[rel="tag"],
+.difficulte-tag {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: var(--primary) !important;
+    color: white !important;
+    
+    height: 40px !important;
+    padding: 0 25px !important;
+    min-width: 120px !important;
+    
+    border-radius: 50px !important;
+    font-size: 0.8rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    text-decoration: none !important;
+    margin-top: 20px !important;
+    line-height: 1 !important; /* Centre le texte verticalement */
+}
+
+/* --- 6. PAGE SINGLE --- */
+.single-randonnee-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.single-randonnee-container img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 30px;
+}
+
+.tech-infos {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    text-align: left;
+    margin-bottom: 30px;
+}
